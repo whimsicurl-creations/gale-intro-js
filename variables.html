@@ -7,9 +7,33 @@
     <title>Variables</title>
 </head>
 <body>
+    <label for="txtFName">Type your first name: </label>
+    <input type="text" id="txtFName"><br>
+    <input type="button" value="Click me" onclick="showName()">
+    <!-- Use JavaScript to put cursor in the textbox -->
     <script>
-        var goober = "Howdy";
-        alert(goober);
+        document.getElementById('txtFName').focus();
+    </script>
+
+    <script>
+        //var goober = "Howdy";
+        //alert(goober);
+
+        // Sample JavaScript function
+        function showName() {
+            // Store text from textFName textbox in fName variable
+            var fName = document.getElementById('txtFName').value;
+            // Create a message from literal text and fName variable
+            var msg = "Hello there " + fName + "!";
+            // Open a new browser window (or tab)
+            var newWindow = window.open('', 'newWindow', 'width=300,height=200');
+            // In the new window, put the msg variable text in h1 tags
+            newWindow.document.write("<h1>" + msg + "</h1>");
+            // Add tags to close the new window
+            newWindow.document.write("<a href='' onclick='window.close()'>Close</a>");
+            // Make sure new window has the focus (isn't covered by something else)
+            newWindow.focus();
+        }
     </script>
     
 </body>
