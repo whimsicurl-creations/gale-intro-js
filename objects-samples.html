@@ -14,6 +14,13 @@
     Your page width is <script> document.write(window.innerWidth)</script> pixels.<br>
     Your page height is <script> document.write(window.innerHeight)</script> pixels.<br>
     This page was last modified on <script> document.write(document.lastModified)</script>.<br>
-    
+    This page title is <script> document.write(location.href) </script>.<br>
+    <label for="username">Type your name:</label>
+    <input type="text" id="username"> then click
+    <input type="button" value="Go" onclick="alert('Hello ' + document.getElementById('username').value)">
+    <p>
+        <button onclick = "window.close()">Close Me</button>
+    </p>
+
 </body>
 </html>
