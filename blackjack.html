@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Blackjack Test</title>
+</head>
+<body>
+    Enter your first card (as a value 1-13) here:
+    <input type="text" id="card" style="width: 50px" autofocus>
+    and press Go
+    <button onclick="hitOrStay()">Go</button>
+    <p id="advice"></p>
+    <script>
+        function hitOrStay(card) {
+            // create card variable
+            var card = document.getElementById('card').value;
+            // variable for message shown
+            var msg = "";
+            if (isNaN(card) || card == "" || card == 0 || card > 13) {
+                msg = "Please enter a valid card";
+            } 
+            else if (card > 1 && card < 8) {
+                msg = "Hit me!";
+            } 
+            else if (card > 7 && card < 11) {
+                msg = "Hit at your own risk.  Do you feel lucky?";
+            } 
+            else {
+                msg = "I'd stay if I were you."
+            }
+            
+            // display msg in paragraph element with id of advice
+            document.getElementById('advice').innerHTML = msg;
+        }
+        
+    </script>
+</body>
+</html>
