@@ -18,9 +18,11 @@
                 var ddchoice = document.getElementById('dropdown').value;
                 if (ddchoice == 1) {
                     var query = "http://www.bing.com/search?q=" + encodeURIComponent(lookfor) + " site:" + site;
-                } else {
+                } else if (ddchoice == 2) {
                     // Build URL for the search
                     var query = "http://www.google.com/search?q=" + encodeURIComponent(lookfor) + " site:" + site;
+                } else {
+                    var query = "http://search.yahoo.com/search?p=" + encodeURIComponent(lookfor) + " site:" + site;
                 }
                 // Set address bar equal to query
                 location.href = query;
@@ -39,6 +41,7 @@
         <select id="dropdown">
             <option value="1">Bing</option>
             <option value="2" selected>Google</option>
+            <option value="3">Yahoo</option>
         </select>
         <input type="button" onclick="search()" value="Go">
     </p>
