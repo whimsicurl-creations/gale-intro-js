@@ -16,8 +16,12 @@
             if (lookfor.length > 0) {
                 // Build URL for the search
                 var query = "http://www.google.com/search?q=" + encodeURIComponent(lookfor) + " site:" + site;
+                //console.log(query);
+                // Set address bar equal to query
+                location.href=query;
             } else {
-                alert('Please enter something in the box');
+                // If textbox was empty, show an alert
+                alert('Please enter something in the textbox');
             }
         }
     </script>
