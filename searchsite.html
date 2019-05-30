@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Search My Site</title>
+    <script>
+        // Search a specific site rather than the entire Web
+        function search() {
+            // Replace sample domain name with your own domain name
+            var site ="wikipedia.org";
+            // Get the text that the user typed into the textbox
+            var lookfor = document.getElementById('txtlookfor').value;
+            // If the box wasn't empty do the search
+            if (lookfor.length > 0) {
+                // Build URL for the search
+                var query = "http://www.google.com/search?q=" + encodeURIComponent(lookfor) + " site:" + site;
+            } else {
+                alert('Please enter something in the box');
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Search this site:
+        <input type="text" id="txtlookfor" autofocus>
+        <input type="button" onclick="search()" value="Go">
+    </p>
+</body>
+</html>
