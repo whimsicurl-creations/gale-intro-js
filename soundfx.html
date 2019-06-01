@@ -7,6 +7,7 @@
     <title>Sound FX</title>
 </head>
 <body>
+    <button onclick="playsound()">Sample</button>
     
 <script>
     // If site can handle audio, run code in curly braces, otherwise ignore code
@@ -17,8 +18,18 @@
         //use player.canPlayType('audio/ogg; codecs="vorbis"') for OGG
         if (player.canPlayType('audio/mpeg').length > 0) {
             //code for MP3 file goes here
-        } else if (player.canPlayType('audio/ogg; codecs="vorbis"').length > 0) {
+            player.setAttribute('src', 'sounds/whoosh.mp3');
+        }
+        if (player.canPlayType('audio/ogg; codecs="vorbis"').length > 0) {
             //code for OGG file goes here
+        player.setAttribute('src', 'sounds/whoosh.ogg');
+        }
+        //this function only runs when called
+        //it plays the sound file in the player, if the player exists
+        function playsound() {
+            if (window.player) {
+                player.play();
+            }
         }
     }
 </script>
