@@ -8,5 +8,19 @@
 </head>
 <body>
     
+<script>
+    // If site can handle audio, run code in curly braces, otherwise ignore code
+    if (window.HTMLAudioElement) {
+        // create audio element that isn't visible on the page
+        var player = document.createElement('audio');
+        //check if browser can play MP3
+        //use player.canPlayType('audio/ogg; codecs="vorbis"') for OGG
+        if (player.canPlayType('audio/mpeg').length > 0) {
+            //code for MP3 file goes here
+        } else if (player.canPlayType('audio/ogg; codecs="vorbis"').length > 0) {
+            //code for OGG file goes here
+        }
+    }
+</script>
 </body>
 </html>
