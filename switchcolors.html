@@ -5,13 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Color Cycle</title>
+    <style>
+    /* Style the box */
+    #sample {
+        width: 100px;
+        height: 100px;
+        border: solid 1px black;
+        background-color: blue;
+    }
+    </style>
 </head>
 <body>
+    <!-- Show the box and handle click event -->
+    <div id="sample" onclick="changeColor(this)">
+    </div>
     
 <script>
     //Changes the backgrounds color of box on each click
     function changeColor(ctrl) {
         //Get the current background color and store in variable
+        var color = ctrl.style.backgroundColor;
+        //If it's nothing or blue, make it green
+        if (color == '' || color == "blue") {
+            ctrl.style.backgroundColor = "green";
+        }
+        //If it was green make it blue.
+        else if (color == "green") {
+            ctrl.style.backgroundColor = "yellowgreen";
+        } else if (color == "yellowgreen") {
+            ctrl.style.backgroundColor = "orange";
+        } else if (color == "orange") {
+            ctrl.style.backgroundColor = "red";
+        } else {
+            ctrl.style.backgroundColor = '';
+        }
     }
 </script>
 
