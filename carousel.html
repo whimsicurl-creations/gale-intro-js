@@ -4,9 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Photo Carousel</title>
+    <style>
+    /* CSS code to style pictures */
+    .carousel {
+        text-align: center;
+    }
+    #bigpic {
+        height: 400px;
+    }
+    .thumbs img {
+        height: 75px;
+    }
+    </style>
 </head>
 <body>
+    <!-- HTML to display the pictures -->
+    <div class="carousel">
+        <img src="pix3/birds01.png" alt="" id="bigpic">
+        <div class="thumbs">
+            <img src="pix3/birds01.png" alt="" onclick="showbig(this.src)">
+            <img src="pix3/birds02.png" alt="" onclick="showbig(this.src)">
+            <img src="pix3/birds03.png" alt="" onclick="showbig(this.src)">
+            <img src="pix3/birds04.png" alt="" onclick="showbig(this.src)">
+            <img src="pix3/birds05.png" alt="" onclick="showbig(this.src)">
+        </div><!-- End thumbs -->
+    </div><!-- End carousel -->
     
 </body>
 </html>
