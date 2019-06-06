@@ -30,6 +30,11 @@
             <img src="pix3/birds05.png" alt="" onclick="showbig(this.src)">
         </div><!-- End thumbs -->
     </div><!-- End carousel -->
-    
+<script>
+    // Show clicked image in the large img tag
+    function showbig(pic) {
+        document.getElementById('bigpic').src = pic;
+    }
+</script> 
 </body>
 </html>
