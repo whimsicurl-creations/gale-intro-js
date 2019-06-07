@@ -31,6 +31,9 @@
         </div><!-- End thumbs -->
     </div><!-- End carousel -->
 <script>
+    // The maximages global variable must equal the number of thumbnails in the gallery
+    var maximages = 5;
+    
     // Show clicked image in the large img tag
     function showbig(pic) {
         document.getElementById('bigpic').src = pic;
