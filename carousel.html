@@ -23,17 +23,22 @@
     <div class="carousel">
         <img src="pix3/birds01.png" alt="" id="bigpic">
         <div class="thumbs">
+            <img src="pix3/LeftArrow.png" alt="Previous" onclick="calcslide(-1)">
             <img src="pix3/birds01.png" alt="" onclick="showbig(this.src)">
             <img src="pix3/birds02.png" alt="" onclick="showbig(this.src)">
             <img src="pix3/birds03.png" alt="" onclick="showbig(this.src)">
             <img src="pix3/birds04.png" alt="" onclick="showbig(this.src)">
             <img src="pix3/birds05.png" alt="" onclick="showbig(this.src)">
+            <img src="pix3/RightArrow.png" alt="Next" onclick="calcslide(1)">
         </div><!-- End thumbs -->
     </div><!-- End carousel -->
 <script>
     // The maximages global variable must equal the number of thumbnails in the gallery
     var maximages = 5;
-    
+    // Folder name and start of file name for each image file
+    var startpath = "pix3/birds"
+    // Filename extension of each image
+    var extension = ".png"
     // Show clicked image in the large img tag
     function showbig(pic) {
         document.getElementById('bigpic').src = pic;
