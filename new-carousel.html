@@ -14,7 +14,10 @@
         height: 400px;
     }
     .thumbs img {
-        height: 100px;
+        height: 75px;
+    }
+    img:hover {
+        cursor: pointer;
     }
     </style>
 </head>
@@ -33,7 +36,7 @@
             <img src="img/image08.jpg" alt="" onclick="showbig(this.src)">
             <img src="img/image09.jpg" alt="" onclick="showbig(this.src)">
             <img src="img/image10.jpg" alt="" onclick="showbig(this.src)">
-            <img src="pix3/RighttArrow.png" alt="Next" onclick="calcslide(1)">
+            <img src="pix3/RightArrow.png" alt="Next" onclick="calcslide(1)">
         </div> <!-- End thumbs -->
     </div> <!-- End carousel -->
     <script>
@@ -46,7 +49,32 @@
 
         // Show clicked image in bigpic spot
         function showbig(pic) {
-            
+            document.getElementById('bigpic').src = pic;
+        }
+
+        // Calculate which image to show depending on whether x is 1 or -1
+        function calcslide(x) {
+            // Get current image filename
+            var currentimage = document.getElementById('bigpic').src;
+            // Locate file name extension
+            var dotat = currentimage.indexOf(extension);
+            // Grab two digits before file extension
+            var stringnumber = currentimage.substr(dotat - 2, 2);
+            // Convert string to number and add x
+            var nextnum = parseInt(stringnumber) + x;
+            // If nextnum is less than 1, wrap around to max images
+            if (nextnum < 1) {
+                nextnum = maximages;
+            }
+            // If nextnum is greater than maximages, wrap around to 1
+            if (nextnum > maximages) {
+                nextnum = 1;
+            }
+            // Create two-digit string from number (leading zero if less than 10)
+            var twodigitnum = ('0' + nextnum).slice(-2);
+            // Create new file name from two-digit string
+            var showing = startpath + twodigitnum + extension;
+            showbig(showing);
         }
     </script>
 </body>
