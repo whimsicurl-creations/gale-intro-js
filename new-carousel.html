@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New Photo Carousel</title>
+    <style>
+    /* CSS code for styling images */
+    .carousel {
+        text-align: center;
+    }
+    #bigpic {
+        height: 400px;
+    }
+    .thumbs img {
+        height: 100px;
+    }
+    </style>
+</head>
+<body>
+    <div class="carousel">
+        <img src="img/image01.jpg" alt="" id="bigpic">
+        <div class="thumbs">
+            <img src="pix3/LeftArrow.png" alt="Previous" onclick="calcslide(-1)">
+            <img src="img/image01.jpg" alt="" onclick="showbig(this.src)">
+            <img src="img/image02.jpg" alt="" onclick="showbig(this.src)">
+            <img src="img/image03.jpg" alt="" onclick="showbig(this.src)">
+            <img src="img/image04.jpg" alt="" onclick="showbig(this.src)">
+            <img src="img/image05.jpg" alt="" onclick="showbig(this.src)">
+            <img src="img/image06.jpg" alt="" onclick="showbig(this.src)">
+            <img src="img/image07.jpg" alt="" onclick="showbig(this.src)">
+            <img src="img/image08.jpg" alt="" onclick="showbig(this.src)">
+            <img src="img/image09.jpg" alt="" onclick="showbig(this.src)">
+            <img src="img/image10.jpg" alt="" onclick="showbig(this.src)">
+            <img src="pix3/RighttArrow.png" alt="Next" onclick="calcslide(1)">
+        </div> <!-- End thumbs -->
+    </div> <!-- End carousel -->
+    <script>
+        // Max number of images
+        var maximages = 10;
+        // Beginning of path location for images
+        var startpath = "img/image";
+        // Filename extension for images
+        var extension = ".jpg";
+
+        // Show clicked image in bigpic spot
+        function showbig(pic) {
+            
+        }
+    </script>
+</body>
+</html>
