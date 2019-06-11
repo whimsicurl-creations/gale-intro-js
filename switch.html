@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Switch Demo</title>
+</head>
+<body>
+    <p>Type a number between 1 to 4 and then click Go:
+        <input type='number' id='textEntry' style='width: 60px;' />
+        <button onclick='switchdemo()'>
+        Go</button>
+    </p>
+<p id='result' style='color: red;'></p>
+
+<script>
+    function switchdemo() {
+        // Get the value from the textbox
+        var num = parseInt(document.getElementById('textEntry').value);
+        // Declare msg variable as string
+        var msg = '';
+        switch (num) {
+            case 1:
+                msg = 'one';
+                break;
+            case 2:
+                msg = 'two';
+                break;
+            case 3:
+                msg = 'three';
+                break;
+            case 4: 
+                msg = 'four';
+                break;
+            default: 
+                msg = 'I asked for a number between 1 and 4.'
+        }
+        // Find and populate result paragraph
+        document.getElementById('result').innerHTML = msg;
+    }
+</script>
+</body>
+</html>
