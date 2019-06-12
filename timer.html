@@ -14,10 +14,22 @@
             var time = now.toLocaleTimeString();
             document.getElementById('ptime').innerHTML = time;
         }
+        // Function to stop the timer
+        function stoptimer() {
+            clearInterval(clock);
+        }
+        // Function to start the timer
+        function starttimer() {
+            clock = setInterval('showtime()', 1000);
+        }
     </script>
 </head>
 <body>
     <!-- Paragraph with an ID to show the time -->
     <p id='ptime'></p>
+    <!-- Button to stop the timer -->
+    <input type='button' value='Stop Clock' onclick='stoptimer()'>
+    <!-- Button to start the timer -->
+    <input type='button' value='Start Clock' onclick='starttimer()'>
 </body>
 </html>
