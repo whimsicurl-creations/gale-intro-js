@@ -15,11 +15,11 @@
         }
         .fadein {
             opacity: 1;
-            transition: all ease-out 0.25s;
+            transition: all ease-out 0.5s;
         }
         .fadeout {
-            opacity: 0;
-            transition: all ease-out 0.25s;
+            opacity: 0.5;
+            transition: all ease-out 0.5s;
         }
     </style>
 </head>
@@ -42,7 +42,7 @@
         // Apply fadeout style class
         imgtag.className = 'fadeout';
         // Wait 250ms, then get new image
-        setTimeout('newimg()', 250);
+        setTimeout('newimg()', 500);
     }
     function newimg() {
         subscript = (subscript == images.length -1) ? 0 : subscript + 1;
