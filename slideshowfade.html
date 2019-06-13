@@ -6,7 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Slideshow with Fade</title>
     <style>
-        
+        #slideshow {
+            height: 375px;
+            text-align: center;
+        }
+        #slideshow img {
+            height: 100%;
+        }
+        .fadein {
+            opacity: 1;
+            transition: all ease-out 0.25s;
+        }
+        .fadeout {
+            opacity: 0;
+            transition: all ease-out 0.25s;
+        }
     </style>
 </head>
 <body>
