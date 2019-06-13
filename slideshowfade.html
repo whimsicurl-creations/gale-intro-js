@@ -26,10 +26,14 @@
 <body>
     <div id="slideshow">
         <img id="slideimg" src="pix3/candle.jpg" alt="">
+        <br/>
+        <input type="button" onclick="startstop()" value="Stop" id="btnStopGo" />
     </div> <!-- End slideshow -->
 <script>
     var subscript = 0;
     var pictime = 5;
+    var stimer;
+    var isrunning;
     var images = [];
     images[0] = 'pix3/candle.jpg';
     images[1] = 'pix3/chip.jpg';
@@ -41,7 +45,7 @@
         var imgtag = document.getElementById('slideimg');
         // Apply fadeout style class
         imgtag.className = 'fadeout';
-        // Wait 250ms, then get new image
+        // Wait 500ms, then get new image
         setTimeout('newimg()', 500);
     }
     function newimg() {
@@ -52,9 +56,34 @@
         imgtag.className = 'fadein';
         console.log(imagefile);
     }
+    function startstop() {
+        // Get the id of the button
+        var btn = document.getElementById('btnStopGo');
+        console.log(isrunning);
+        // If the slideshow is running...
+        if (isrunning) {
+            // stop the slide timer
+            clearInterval(stimer);
+            // set isrunning to false
+            isrunning = false;
+            // change button text to Start
+            btn.value = "Start";
+        } else {
+            // Else, if slideshow isn't running, show next image
+            nextimg();
+            // restart the timer
+            stimer = setInterval('nextimg()', pictime * 1000);
+            // set isrunning to true
+            isrunning = true;
+            // change button text to Stop
+            btn.value = "Stop";
+        }
+    }
 
-    var stimer = setInterval('nextimg()', pictime * 1000);
-    console.log(stimer);
+    window.onload = function() {
+        stimer = setInterval('nextimg()', pictime * 1000);
+        isrunning = true;
+    }
 </script>
 </body>
 </html>
