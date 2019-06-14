@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>jQuery Template</title>
-    <!-- Load jQuery 1.9.1 minified from Google CDN -->
-    <script src="http://ajax.gooleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
-    </script>
-    <script>
-        $(document).ready(function() {
-            // jQuery code to execute after page load
-            
-        });
-    </script>
+ <title>jQuery Selectors</title>
+  <!-- Load jQuery 1.9.1 minified from Google CDN -->
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js">
+ </script>
+ <script>
+  $(document).ready(function () {
+   $("button").click(function () {
+    alert("Hello world");
+   });
+  }); 
+ </script>
 </head>
 <body>
-    
+ <button id="button1">Button 1</button><br />
+ <button id="button2">Button 2</button><br />
+ <button id="button3">Button 3</button>
 </body>
 </html>
