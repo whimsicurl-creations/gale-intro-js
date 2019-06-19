@@ -38,6 +38,7 @@
             background-color: white;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
+            display: none;
         }
     </style>
 </head>
@@ -55,8 +56,15 @@
 
 <script>
     //jQuery code
-    $(document).ready(function () {
-    });  
+    $(document).ready(function() {
+        //User clicked top of a collapsible panel
+        $('.cPanel .top').click(function() {
+            //Switch between two background images
+            $(this).toggleClass('collapse expand');
+            //Slide the panel up or down
+            $(this).next('.slidepanel').slideToggle('slow');
+        });
+    });
 </script>
 </body>
 </html>
