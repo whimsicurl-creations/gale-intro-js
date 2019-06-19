@@ -71,7 +71,16 @@
 
 <script>
     $(document).ready(function() {
-
+        // Listen for a click on the accordion container with terms
+        $('.accordion .term').click(function() {
+            // If the item the user just clicked on is hidden
+            if ($(this).next('p').is(':hidden')) {
+                // Hide all dropdown panels
+                $('.accordion p').slideUp('fast');
+            };
+            // Slide down the panel under the term the user clicked
+            $(this).next('p').slideToggle('fast');
+        })
     });    
 </script>
 </body>
