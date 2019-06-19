@@ -5,8 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Toggle Background</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+        .reverse {
+            background: black;
+            color: white;
+        }
+    </style>
 </head>
 <body>
+    <button>Reverse It</button>
+    <p style="font-size: 300%">This is just some sample text.</p>
+
+    <script>
+        $(document).ready(function() {
+            $('button').click(function() {
+                $('body').toggleClass('reverse');
+            });
+        });
+    </script>
     
 </body>
 </html>
