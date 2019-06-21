@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Roundabout</title>
+  <!-- New syntax for the jQuery CDN download -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <!-- Uses the jQuery Roundabout slider from plugins.jQuery.com -->
+  <script src="roundabout.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // jQuery code to execute after page load
+      $('.slider').roundabout({
+        dots: true,
+        infinite: true,
+        speed: 200,
+        autoplay: true
+      });
+    });
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html,
+    body {
+      background: #ccc;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Roundabout */
+
+    html,
+    body {
+      background: #ccc;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .roundabout-loading .roundabout-list {
+      background: #fff url('pix3/ajax-loader.gif') center center no-repeat;
+    }
+
+    /* Roundabout */
+
+    .roundabout-slider {
+      position: relative;
+      display: block;
+      margin: 20px;
+    }
+
+    .roundabout-slider .roundabout-list {
+      overflow: hidden;
+      display: block;
+      margin: 0px;
+      padding: 0px;
+    }
+
+    .roundabout-slider .roundabout-track {
+      position: relative;
+      left: 0px;
+      top: 0px;
+    }
+
+    .roundabout-slider .roundabout-list .slide {
+      display: block;
+      list-style-type: none;
+      float: left;
+    }
+
+    .roundabout-slider .roundabout-list .slide img {
+      display: block;
+    }
+
+    .roundabout-slider .roundabout-prev {
+      position: absolute;
+      background: url('pix3/sierramist.png') -40px -40px no-repeat;
+      display: block;
+      height: 20px;
+      width: 20px;
+      text-indent: -9999px;
+      top: 50%;
+      margin-top: -27px;
+      left: 10px;
+      padding: 10px;
+    }
+
+    .roundabout-slider .roundabout-next {
+      position: absolute;
+      background: url('pix3/sierramist.png') -90px -40px no-repeat;
+      display: block;
+      height: 20px;
+      width: 20px;
+      text-indent: -9999px;
+      top: 50%;
+      margin-top: -27px;
+      right: 10px;
+      padding: 10px;
+    }
+
+    .roundabout-slider .roundabout-next.disabled {
+      background-position: -90px -90px;
+    }
+
+    .roundabout-slider .roundabout-prev.disabled {
+      background-position: -40px -90px;
+    }
+
+    .roundabout-dots {
+      position: relative;
+      bottom: 0px;
+      list-style: none;
+      display: block;
+      text-align: center;
+      padding: 0px;
+    }
+
+    .roundabout-dots li {
+      position: relative;
+      display: inline-block;
+      background: url('pix3/sierramist.png') -200px -50px no-repeat;
+      height: 5px;
+      width: 5px;
+      text-indent: -9999px;
+      margin: 0px 10px;
+      padding: 0px;
+    }
+
+    .roundabout-dots li.active {
+      background-position: -150px -50px;
+    }
+
+    .roundabout-dots li a {
+      display: block;
+      height: 10px;
+      width: 10px;
+    }
+
+    @media only screen and (min-width: 1025px) {
+      .roundabout-slider .roundabout-prev {
+        left: -10px;
+        opacity: 0;
+        transition: opacity .25s, left .25s;
+        -webkit-transition: opacity .25s, left .25s;
+      }
+
+      .roundabout-slider .roundabout-next {
+        right: -10px;
+        opacity: 0;
+        transition: opacity .25s, right .25s;
+        -webkit-transition: opacity .25s, right .25s;
+      }
+
+      .roundabout-slider:hover .roundabout-prev {
+        transition: opacity .25s, left .25s;
+        -webkit-transition: opacity .25s, left .25s;
+        opacity: 1;
+        left: 10px;
+      }
+
+      .roundabout-slider:hover .roundabout-next {
+        transition: opacity .25s, right .25s;
+        -webkit-transition: opacity .25s, right .25s;
+        opacity: 1;
+        right: 10px;
+      }
+    }
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+    only screen and (min--moz-device-pixel-ratio: 1.5),
+    only screen and (min-resolution: 240dpi) {
+      .roundabout-dots li {
+        background: url('pix3/sierramist@2x.png') -200px -50px no-repeat;
+        background-size: 900px 200px;
+      }
+
+      .roundabout-slider .roundabout-next {
+        background: url('pix3/sierramist@2x.png') -90px -40px no-repeat;
+        background-size: 900px 200px;
+      }
+
+      .roundabout-slider .roundabout-prev {
+        background: url('pix3/sierramist@2x.png') -40px -40px no-repeat;
+        background-size: 900px 200px;
+        -webkit-background-size: 900px 200px;
+      }
+    }
+
+    .roundabout-list {
+      background-color: #fff;
+    }
+
+    .roundabout-list {
+      z-index: 9999;
+      border: 4px solid white;
+      box-shadow: 0 8px 6px -8px black;
+    }
+
+    .slider li img {
+      position: relative;
+      width: 100%;
+      z-index: 8888;
+    }
+
+    @media only screen and (min-width: 1025px) {
+      .content {
+        width: 800px;
+        margin: auto;
+      }
+
+      .roundabout-slider {
+        position: relative;
+        width: 800px;
+        margin: 20px auto;
+      }
+    }
+
+    @media only screen and (max-width: 1024px) {
+      h1 {
+        font-size: 60px !important;
+      }
+
+      .content {
+        margin: 20px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <!-- The content div controls the width of the layout -->
+  <div class="content">
+    <!-- The slider div is for the jQuery code and much of the CSS -->
+    <div class="slider">
+      <ul>
+        <!-- Pictures should all be the same dimensions for best results,
+              up to 800 x 600 -->
+        <li>
+          <img src="pix3/candle.jpg" alt="">
+        </li>
+        <li>
+          <img src="pix3/chip.jpg" alt="">
+        </li>
+        <li>
+          <img src="pix3/fire.png" alt="">
+        </li>
+        <li>
+          <img src="pix3/water.png" alt="">
+        </li>
+      </ul>
+    </div>
+    <p style="text-align:center;font-size:2em;">
+      <a href="roundabout.zip">Download all Roundabout Code</a>
+    </p>
+    <h3>Alternatives to Roundabout</h3>
+    <ul>
+      <li>
+        <a href="https://alansimpson.me/javascript/code_quickies/carousel/">Responsive Carousel</a>
+      </li>
+      <li>
+        <a href="https://alansimpson.me/javascript/code_quickies/slideshow/">Responsive Slideshow</a>
+      </li>
+      <li>
+        <a href="https://alansimpson.me/javascript/code_quickies/slider/">Responsive Slider</a>
+      </li>
+    </ul>
+  </div>
+</body>
+
+</html>
